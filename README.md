@@ -19,13 +19,13 @@
 
 ```powershell
 .\build.ps1
-
+```
 
 
 安全提示 🔒
 首次运行 PowerShell 脚本时，系统会显示安全警告：
 
-text
+
 安全警告
 请只运行你信任的脚本。虽然来自 Internet 的脚本会有一定的用处，但此脚本可能会损坏你的计算机。
 如果你信任此脚本，请使用 Unblock-File cmdlet 允许运行该脚本，而不显示此警告消息。
