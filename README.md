@@ -9,7 +9,7 @@
 | 文件 | 用途 | 说明 |
 |------|------|------|
 | **`thesis.tex`** | 主论文文件 | 标准学位论文撰写主文件，包含封面、摘要、目录、正文、参考文献等完整结构 |
-| **`ThesisForCheck.tex`** | 抽检样式文件 | 专为学位论文抽检设计的格式，隐藏个人信息，保留学术内容 |
+| **`ThesisForCheck.tex`** | 抽检样式主文件 | 专为学位论文抽检设计的格式，隐藏个人信息，保留学术内容 |
 | **`build.ps1`** | 编译脚本 | PowerShell 自动编译脚本，支持多种编译选项 |
 
 ## 🚀 快速开始
@@ -25,34 +25,39 @@
 安全提示 🔒
 首次运行 PowerShell 脚本时，系统会显示安全警告：
 
-
+```text
 安全警告
 请只运行你信任的脚本。虽然来自 Internet 的脚本会有一定的用处，但此脚本可能会损坏你的计算机。
 如果你信任此脚本，请使用 Unblock-File cmdlet 允许运行该脚本，而不显示此警告消息。
 
 是否要运行 D:\texlive\workspace\Templates\YZUThesis\学位论文模板v2\YZUthesis\build.ps1?
 [D] 不运行(D)  [R] 运行一次(R)  [S] 暂停(S)  [?] 帮助 (默认值为"D"):
+```
 输入 R 并回车即可正常编译。
 
 💡 永久解决方案：如需永久信任此脚本，可运行：
 
-powershell
+```powershell
 Unblock-File .\build.ps1
+```
+
 
 ⚙️ 高级编译选项
 完整命令语法
-powershell
+```powershell
 .\build.ps1 [-Action <命令>] [-Engine <引擎>] [-Help | -help | -h]
+```
 
 🔧 可用操作命令 (Action)
-命令	功能说明
-all	编译所有内容（默认选项）
-cls	仅生成 .cls 和 .cfg 样式文件
-doc	仅生成模板文档
-thesis	编译所有主论文文档
-check	仅编译抽检文档
-clean	清理临时文件（*.aux, *.log 等）
-distclean	完全清理（包括生成的PDF）
+|命令|功能说明|
+|------|------|
+|all|编译所有内容（默认选项）|
+|cls|仅生成 .cls 和 .cfg 样式文件|
+|doc|仅生成模板文档|
+|thesis|编译所有主论文文档|
+|check|仅编译抽检文档|
+|clean|清理临时文件（*.aux, *.log 等）|
+|distclean|完全清理（包括生成的PDF）|
 
 🛠️ 可用编译引擎 (Engine)
 |引擎|说明|推荐用途|
@@ -65,22 +70,35 @@ distclean	完全清理（包括生成的PDF）
 📋 使用示例
 powershell
 # 1. 默认编译（使用 XeLaTeX 编译所有内容）
+```powershell
 .\build.ps1
+```
 
 # 2. 使用特定引擎编译
+```powershell
 .\build.ps1 -Engine pdflatex
+```
 
 # 3. 仅编译论文主文件
+```powershell
 .\build.ps1 -Action thesis
+```
 
 # 4. 使用 LuaLaTeX 编译论文主文件
+```powershell
 .\build.ps1 -Action thesis -Engine lualatex
+```
 
 # 5. 仅清理临时文件
+```powershell
 .\build.ps1 -Action clean
+```
 
 # 6. 显示帮助信息
+```powershell
 .\build.ps1 -Help
+```
+
 ⚡ 当前默认配置
 默认编译引擎: xelatex
 
