@@ -1,61 +1,62 @@
 # YZUthesis
 A thesis template for Yangzhou University.
 
+## Main files
+thesis.tex  å­¦ä½è®ºæ–‡ä¸»æ–‡ä»¶
+ThesisForCheck.tex å­¦ä½è®ºæ–‡æŠ½æ£€æ ·å¼ä¸»æ–‡ä»¶
 
-thesis.tex  Ñ§Î»ÂÛÎÄÖ÷ÎÄ¼ş
-ThesisForCheck.tex Ñ§Î»ÂÛÎÄ³é¼ìÑùÊ½Ö÷ÎÄ¼ş
+## compile
+è¿è¡Œ build.ps1 å³å¯å¾—åˆ°æ‰€æœ‰æ–‡ä»¶.
 
-±àÒë: ÔËĞĞ build.ps1 ¼´¿ÉµÃµ½ËùÓĞÎÄ¼ş.
+### å®‰å…¨è­¦å‘Š
+åœ¨å‘½ä»¤è¡Œæç¤ºç¬¦ä¸‹, è¿è¡Œ build.ps1 æ—¶, ä¼šæ˜¾ç¤ºä¸‹é¢çš„å®‰å…¨è­¦å‘Š:
 
-ÔÚÃüÁîĞĞÌáÊ¾·ûÏÂ, ÔËĞĞ build.ps1 Ê±, »áÏÔÊ¾ÏÂÃæµÄ°²È«¾¯¸æ:
------------------------------------------------------------
-°²È«¾¯¸æ
-ÇëÖ»ÔËĞĞÄãĞÅÈÎµÄ½Å±¾¡£ËäÈ»À´×Ô Internet µÄ½Å±¾»áÓĞÒ»¶¨µÄÓÃ´¦£¬µ«´Ë½Å±¾¿ÉÄÜ»áËğ»µÄãµÄ¼ÆËã»ú¡£Èç¹ûÄãĞÅÈÎ´Ë½Å±¾£¬ÇëÊ¹ÓÃ
-Unblock-File cmdlet ÔÊĞíÔËĞĞ¸Ã½Å±¾£¬¶ø²»ÏÔÊ¾´Ë¾¯¸æÏûÏ¢¡£ÊÇ·ñÒªÔËĞĞ
-D:\texlive\workspace\Templates\YZUThesis\Ñ§Î»ÂÛÎÄÄ£°åv2\YZUthesis\build.ps1?
-[D] ²»ÔËĞĞ(D)  [R] ÔËĞĞÒ»´Î(R)  [S] ÔİÍ£(S)  [?] °ïÖú (Ä¬ÈÏÖµÎª¡°D¡±):
------------------------------------------------------------
-´ËÊ±ÊäÈë R ²¢»Ø³µ¼´¿ÉÉú³ÉËùÓĞËùĞèµÄÎÄ¼ş.
+å®‰å…¨è­¦å‘Š
+è¯·åªè¿è¡Œä½ ä¿¡ä»»çš„è„šæœ¬ã€‚è™½ç„¶æ¥è‡ª Internet çš„è„šæœ¬ä¼šæœ‰ä¸€å®šçš„ç”¨å¤„ï¼Œä½†æ­¤è„šæœ¬å¯èƒ½ä¼šæŸåä½ çš„è®¡ç®—æœºã€‚å¦‚æœä½ ä¿¡ä»»æ­¤è„šæœ¬ï¼Œè¯·ä½¿ç”¨
+Unblock-File cmdlet å…è®¸è¿è¡Œè¯¥è„šæœ¬ï¼Œè€Œä¸æ˜¾ç¤ºæ­¤è­¦å‘Šæ¶ˆæ¯ã€‚æ˜¯å¦è¦è¿è¡Œ
+D:\texlive\workspace\Templates\YZUThesis\å­¦ä½è®ºæ–‡æ¨¡æ¿v2\YZUthesis\build.ps1?
+[D] ä¸è¿è¡Œ(D)  [R] è¿è¡Œä¸€æ¬¡(R)  [S] æš‚åœ(S)  [?] å¸®åŠ© (é»˜è®¤å€¼ä¸ºâ€œDâ€):
 
-build.ps1 ºóÃæ¿ÉÒÔ¼Ó²ÎÊı, Ê¹ÓÃ·½·¨ÈçÏÂ:
+æ­¤æ—¶è¾“å…¥ R å¹¶å›è½¦å³å¯ç”Ÿæˆæ‰€æœ‰æ‰€éœ€çš„æ–‡ä»¶.
+
+### build.ps1 çš„ç”¨æ³•
+build.ps1 åé¢å¯ä»¥åŠ å‚æ•°, ä½¿ç”¨æ–¹æ³•å¦‚ä¸‹:
 
 
-ÓÃ·¨: .\build.ps1 [-Action <ÃüÁî>] [-Engine <ÒıÇæ>] [-Help | -help | -h]
+ç”¨æ³•: .\build.ps1 [-Action <å‘½ä»¤>] [-Engine <å¼•æ“>] [-Help | -help | -h]
 
-¿ÉÓÃÃüÁî (Action):
+å¯ç”¨å‘½ä»¤ (Action):
 
-  all             - ±àÒëËùÓĞÄÚÈİ (Ä¬ÈÏ)
-  cls             - Ö»Éú³É .cls ºÍ .cfg ÎÄ¼ş
-  doc             - Ö»Éú³ÉÄ£°åÎÄµµ
-  thesis          - ±àÒëËùÓĞÖ÷ÎÄµµ
-  check           - Ö»±àÒë¼ì²éÎÄµµ
-  clean           - ÇåÀíÁÙÊ±ÎÄ¼ş
-  distclean       - ÍêÈ«ÇåÀí
+  all             - ç¼–è¯‘æ‰€æœ‰å†…å®¹ (é»˜è®¤)
+  cls             - åªç”Ÿæˆ .cls å’Œ .cfg æ–‡ä»¶
+  doc             - åªç”Ÿæˆæ¨¡æ¿æ–‡æ¡£
+  thesis          - ç¼–è¯‘æ‰€æœ‰ä¸»æ–‡æ¡£
+  check           - åªç¼–è¯‘æ£€æŸ¥æ–‡æ¡£
+  clean           - æ¸…ç†ä¸´æ—¶æ–‡ä»¶
+  distclean       - å®Œå…¨æ¸…ç†
 
-¿ÉÓÃÒıÇæ (Engine):
+å¯ç”¨å¼•æ“ (Engine):
 
-  pdflatex        - Ê¹ÓÃ pdfLaTeX ±àÒë
-  xelatex         - Ê¹ÓÃ XeLaTeX ±àÒë (Ä¬ÈÏ)
-  lualatex        - Ê¹ÓÃ LuaLaTeX ±àÒë
-  latex           - Ê¹ÓÃ´«Í³ LaTeX ±àÒë£¬Éú³É DVI ÔÙ×ª PDF
+  pdflatex        - ä½¿ç”¨ pdfLaTeX ç¼–è¯‘
+  xelatex         - ä½¿ç”¨ XeLaTeX ç¼–è¯‘ (é»˜è®¤)
+  lualatex        - ä½¿ç”¨ LuaLaTeX ç¼–è¯‘
+  latex           - ä½¿ç”¨ä¼ ç»Ÿ LaTeX ç¼–è¯‘ï¼Œç”Ÿæˆ DVI å†è½¬ PDF
 
-Ê¾Àı:
+ç¤ºä¾‹:
 
-  .\build.ps1                            # Ä¬ÈÏ±àÒëËùÓĞ (xelatex)
-  .\build.ps1 -Engine pdflatex           # Ê¹ÓÃ pdfLaTeX ±àÒëËùÓĞ
+  .\build.ps1                            # é»˜è®¤ç¼–è¯‘æ‰€æœ‰ (xelatex)
+  .\build.ps1 -Engine pdflatex           # ä½¿ç”¨ pdfLaTeX ç¼–è¯‘æ‰€æœ‰
   .\build.ps1 -Action thesis -Engine lualatex
-  .\build.ps1 -Action clean              # ÇåÀíÁÙÊ±ÎÄ¼ş
-  .\build.ps1 -Help                      # ÏÔÊ¾°ïÖúĞÅÏ¢
+  .\build.ps1 -Action clean              # æ¸…ç†ä¸´æ—¶æ–‡ä»¶
+  .\build.ps1 -Help                      # æ˜¾ç¤ºå¸®åŠ©ä¿¡æ¯
 
-µ±Ç°ÅäÖÃ:
-  Ä¬ÈÏÒıÇæ: xelatex
-  Ö÷ÎÄµµ: thesis.tex, ThesisForCheck.tex
-
-
-
-×£Ê¹ÓÃÓä¿ì!
+å½“å‰é…ç½®:
+  é»˜è®¤å¼•æ“: xelatex
+  ä¸»æ–‡æ¡£: thesis.tex, ThesisForCheck.tex
 
 
-H. Xu
+## Author
+Haifeng XU
 
+## Date
 2026-02-6
