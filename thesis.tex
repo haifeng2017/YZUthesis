@@ -1,0 +1,271 @@
+% !TEX encoding = UTF-8
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% Thesis Template of Yangzhou University
+%%   ver 1.0 created on 2007-3-28 by H. Xu
+%%   modified from:
+%%
+%% Thesis Template of Chinese Academy of Sciences
+%%   for using CASthesis package with LaTeX2e
+%%
+%% Created by Ling-Yun Wu <aloft@ctex.org>
+%%
+%% $Id: template.tex,v 1.8 2006/09/09 08:50:46 aloft Exp $
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%  Version 2.0 created on 2026-1-30
+%%                                 by H. Xu
+%%********************************************************************
+%|======================|%
+%|    学位论文模板                    |%
+%|======================|%
+%
+% 特点:
+%     1. 适合撰写博士, 硕士, 本科毕业论文.
+%     2. 稍作修改可以适合其他学校.
+%                                                         --- H. Xu
+%%********************************************************************
+
+
+%%<*>--<*>--<*>--<*>--<*>--<*>--<*>--<*>--<*>--<*>--<*>--<*>--<*>--<*>
+%
+\documentclass[doctor]{YZUthesis}%博士学位论文
+%\documentclass[master]{YZUthesis}%硕士学位论文
+%\documentclass[bachelor]{YZUthesis}%学士学位论文
+%%--------------------------------------------------------------------
+%\documentclass[dvipdfm]{YZUthesis}%适用 LaTeX编译, 然后运行 dvipdfmx 将dvi转换为pdf.
+%\documentclass[dvipdfm,nocap,noindent]{YZUthesis}%
+% 可选参数：
+% notypeinfo 取消扉页的LaTeX版本信息
+% dvips 使用 dvips 生成最终的 PS 文档
+% dvipdfm 使用 dvipdfm(x) 生成最终的 PDF 文档
+% nocap 表示保留英文标题格式
+% noindent 英文格式, 章节标题后的段首不缩进
+%%<*>--<*>--<*>--<*>--<*>--<*>--<*>--<*>--<*>--<*>--<*>--<*>--<*>--<*>
+
+
+%%<*>--<*>--<*>--<*>--<*>--<*>--<*>--<*>--<*>--<*>--<*>--<*>--<*>--<*>
+%|============|%
+%|  一些设置  |%
+%|============|%
+% 设置图形文件的搜索路径
+\graphicspath{{fig/}}
+%
+% 要取消链接的颜色（黑白打印时）, 请使用下面两个命令.
+% 但是实际表明打印出来的黑白效果不佳, 电脑上显示还可以.
+%\hypersetup{colorlinks=false}
+%\renewcommand{\tc}[1]{\emph{#1}\index{\emph{#1}}}
+%------------------------------------------------------
+
+
+% 小节标题靠左对齐
+%\CTEXsetup[format+={\flushleft}]{section}
+%%<*>--<*>--<*>--<*>--<*>--<*>--<*>--<*>--<*>--<*>--<*>--<*>--<*>--<*>
+
+
+%%<*>--<*>--<*>--<*>--<*>--<*>--<*>--<*>--<*>--<*>--<*>--<*>--<*>--<*>
+% 可以修改以下两个文件, 以设定自己的格式.
+\input{setup/cformat.tex} %%中文风格, 适用于论文都是用中文写的
+%\input{setup/eformat.tex} %%英文风格, 适用于论文主体部分都是英文写的
+%%<*>--<*>--<*>--<*>--<*>--<*>--<*>--<*>--<*>--<*>--<*>--<*>--<*>--<*>
+
+\begin{document}
+
+%%--------------------------------------------------------------------
+%|===========|%
+%| 封面顶部  |%
+%|===========|%
+
+  % 请输入中文封面内容, 如不确定或不需要填, 则不必输入
+  \classification{}                                        %分类号
+  \serialnumber{D1234}                                     %学号
+  \UDC{}                                                   %UDC
+  \confidential{}                                          %密级
+
+%%--------------------------------------------------------------------
+%|===========|%
+%| 论文标题        |%
+%|===========|%
+
+  %\title[]{} 命令用于填写论文标题, 其中[]内的用于显示在页眉, 故不宜太长.
+  %如果标题太长, 请在适当的位置使用\bigskip
+  %当然\smallskip,\medskip,\goodbreak 都可以用, 但是这里\bigskip的间隔比较好.
+  %例如下面的长标题, 可以试一下
+  %\title[某某某\quad 微分几何~Differential Geometry~和偏微分方程~Partial Differential Equation~的联系]
+  %{微分几何~Differential Geometry, 代数几何~Algebraic Geometry, 代数拓扑~Algebraic Topology~和偏微分方程~Partial Differential Equation~的联系~abcdefghijklmnopqrstuvwxyz
+  %\uppercase{abcdefghijklmnopqrstuvwxyz}abcdefghijklmnopqrstuvwxyz}
+  \title[某某某\quad 几何与拓扑]{几何与拓扑}
+
+  %不论你的题目是不是很长, 请再拷贝一下到\inlinetitle, 此时请不要加\bigskip, 如下面的.
+  %注意论文标题太长会影响版面, 最好不要超过五行.
+  %\inlinetitle{微分几何~Differential Geometry, 代数几何~Algebraic Geometry, 代数拓扑~Algebraic Topology~和偏微分方程~Partial Differential Equation~的联系~abcdefghijklmnopqrstuvwxyz
+  %\uppercase{abcdefghijklmnopqrstuvwxyz}abcdefghijklmnopqrstuvwxyz}
+  \inlinetitle{几何与拓扑}
+%%--------------------------------------------------------------------
+%|====================|%
+%| 请认真填写基本信息 |%
+%|====================|%
+
+  %\singlename          %如不是单名, 请注释掉该命令
+  \author{某\ 某\ 某}    %作者, 显示于首页. 单名的话中间最好加\quad, 双名的话每个字中间加"\ "比较好看.
+  \inlineauthor{某某某}  %同author, 中间没有空格, 用于正文中.
+  %\degree{博\ 士}        %申请学位级别, 显示在首页, 中间加\quad是为了好看
+  %\inlinedegree{博士}    %输入“博士”, 显示在其他地方, 中间不要加空格
+  \major{微分几何}        %学科专业名称
+  \submitdate{2026年5月} %论文提交日期
+  \defenddate{2026年6月} %论文答辩日期
+  \DegreeGrantedDate{}  %学位授予日期
+  \dept{数学学院}         %作者所在院系
+  \university{扬州大学}   %学位授予单位
+  \supervisor{A~教授}     %导师
+  \supervisordept{扬州大学,\quad 江苏扬州,\quad 225002} %导师所在研究机构, 地点, 邮编
+  \cosupervisor{B~教授}                               %副导师, 如没有请加注释
+  \cosupervisordept{某某大学,\quad 某省某地,\quad 210000}%副导师所在研究机构, 如没有请加注释
+  \funding{国家自然科学基金}%基金项目名称及项目号等信息
+  \chairman{   }         %答辩委员会主席
+  \firstreader{   }      %论文第一评阅人
+  \secondreader{   }     %论文第二评阅人
+  \thirdreader{   }      %论文第三评阅人
+  \fourthreader{   }     %论文第四评阅人, 如没有请加注释
+  \fifthreader{   }      %论文第五评阅人, 如没有请加注释
+  %%本模版最多提供五位评阅人, 如没有第三、四、五评阅人请加上注释
+  %%博士学位论文一般至少三位评阅人.
+
+%%--------------------------------------------------------------------
+%|=====================|%
+%| 请输入英文封面内容  |%
+%|=====================|%
+
+  % 请输入英文封面内容, 如不确定或不需要填, 则不必输入
+  \englishtitle{Geometry and Topology}
+  %下面的标题太长了, 最好不要超过五行.
+  %\englishtitle{微分几何~Differential Geometry, 代数几何~Algebraic Geometry, 代数拓扑~Algebraic Topology~和偏微分方程~Partial Differential Equation~的联系~abcdefghijklmnopqrstuvwxyz
+  %\uppercase{abcdefghijklmnopqrstuvwxyz}abcdefghijklmnopqrstuvwxyz}
+  \englishauthor{Your Name}
+  \englishsupervisor{Prof. A}
+  \englishcosupervisor{Associate Prof. B}
+  \englishdept{School of Mathematical Science} %作者所在院系
+  \englishuniversity{Yangzhou University} %作者所在学校
+  \englishdegree{Ph.D.}
+  %\englishmajor{Differential Geometry}
+  \englishmajor{Science}
+
+
+%%--------------------------------------------------------------------
+%|=================================|%
+%| 生成各封面, 如不需要可将其注释  |%
+%|=================================|%
+
+  % 生成中文封面
+  \maketitle
+
+  % 生成英文封面
+  \makeenglishtitle
+
+  % 基金资助页
+  \include{funding/funding}
+
+  % 论文原创性声明和版权使用授权书
+  \statementpage
+
+  % 生成导师、答辩委员会主席、论文评审人签字页面.
+  \supervisorsignature
+
+%%--------------------------------------------------------------------
+%|==========================================|%
+%| 前言部分, 包括中英文摘要、目录、符号说明 |%
+%|==========================================|%
+\frontmatter  % 前置部分开始
+
+% 目录、摘要、符号说明等
+
+  % 目录
+  \tableofcontents
+  % 表格目录
+  % \listoftables
+  % 插图目录
+  % \listoffigures
+
+  % 摘要
+  %%注意不需要加.tex, 否则可能不能用\include命令, 对于以下的也一样
+  \include{abs/abs}
+
+  % 符号说明
+  % 如论文中不需要添加符号说明, 则将下一行注释
+  \include{symbol/symbol}
+
+%%--------------------------------------------------------------------
+%|===========|%
+%| 正文部分        |%
+%|===========|%
+\mainmatter   % 正文部分开始
+
+% 前言、正文、结语等
+
+  %%输入第一章各节
+  \input{chap/chap0/sec001}
+  \input{chap/chap0/sec002}
+  \input{chap/chap0/sec003}
+
+  %%输入第二章各节
+  \input{chap/chap1/sec101}
+  \input{chap/chap1/sec102}
+  \input{chap/chap1/sec103}
+
+  %%输入第三章各节
+  \input{chap/chap2/sec201}
+  \input{chap/chap2/sec202}
+  \input{chap/chap2/sec203}
+
+%%--------------------------------------------------------------------
+% 结语 peroration
+  \input{peroration/peroration}
+
+%%--------------------------------------------------------------------
+% 附录
+  \appendix
+
+  \input{chap/appendix/a}
+  \input{chap/appendix/b}
+
+%%--------------------------------------------------------------------
+%|======================================================|%
+%| 附件部分, 包括参考文献、索引、发表文章目录、个人简历、致谢           |%
+%|======================================================|%
+\backmatter
+
+  % 参考文献
+  % 使用 BibTeX
+  %input "bib/xbib.bib"
+
+  % 参考文献部分
+  \bibliographystyle{plain} % 选择参考文献样式
+  \bibliography{bib/xbib} % 指定bib文件（不要写.bib扩展名）
+  %\nocite{*}%%使用\nocite{*}将把所有未引用的参考文献也列出
+
+  %%\bibliographystyle{}中的选项, 这里我们使用最普通的 plain.
+  %%其余的有
+  %%alpha 按字母顺序排列, 标签由作者姓名和出版年份组成.
+  %%plain 按字母顺序排列, 标签为数字.
+  %%unsrt 类似于 plain, 但按正文中引用先后排序.
+  %%abbrv 类似于 alpha, but more compact labels.
+  %%thubib.bst 属于清华大学模板.
+  %%其他参考文献的样式文件有 amsalpha.bst, amsplain.bst 等等.
+%%--------------------------------------------------------------------
+
+  % 打印索引
+  \printindex
+
+  % 发表文章目录. 如不需要请注释掉
+  \include{pub/pub}
+
+  % 个人简历. 如不需要请注释掉
+  \include{resume/resume}
+
+  % 致谢. 如不需要请注释掉
+  \include{ack/ack}
+
+
+%%--------------------------------------------------------------------
+
+\end{document}
+
+%%<*>--<*>--<*>--<*>--<*>--<*>--<*>--<*>--<*>--<*>--<*>--<*>--<*>--<*>

@@ -1,0 +1,25 @@
+% YZUthesis.ins
+% 用于从 .dtx 文件生成 .cls 和 .cfg 文件的安装文件
+
+\input docstrip.tex
+\keepsilent
+\askforoverwritefalse
+
+\preamble
+-----------------------------------------------------------------
+扬州大学学位论文LaTeX模板
+版本 2.0
+作者: Haifeng XU
+2026年1月
+-----------------------------------------------------------------
+\endpreamble
+
+\postamble
+\endpostamble
+
+\generate{
+  \file{YZUthesis.cls}{\from{YZUthesis.dtx}{cls}}
+  \file{YZUthesis.cfg}{\from{YZUthesis.dtx}{cfg}}
+}
+
+\endbatchfile

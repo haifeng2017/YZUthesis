@@ -1,0 +1,120 @@
+% !TEX encoding = UTF-8
+%%====<<宏包>>============================================================
+% 已包含的宏包 |
+%--------------|
+%%中文TeX宏包
+%%{ctex}
+%% math packages
+%%{amsmath,amsthm,amsfonts,amssymb,bm,xypic,dsfont,pifont}
+%% graphics packages
+%%{graphicx,psfrag}
+%% color package
+%%{color}
+%% makeidx
+%%{makeidx}
+%使用宏包tocbibind可以将参考文献或索引等放置到目录中去, 需要stdclsdv宏包
+%%{stdclsdv,tocbibind}
+%% 一些特殊符号
+%%{bbding}
+%% check pdfTeX mode
+%%{ifpdf}
+%%交叉索引
+%%{hyperref}
+%--------------------------|
+% 加入你需要用到的其他宏包 |
+%--------------------------|
+%\usepackage{你需要用到的宏包名称}
+%------------------------------------|
+% 下面是一种数学字体, 详见symbols.pdf|
+%------------------------------------|
+\DeclareMathAlphabet{\mathpzc}{OT1}{pzc}{m}{it}
+%用法: \eq{\mathpzc{f(x)}}
+%--*--<>--*--<>--*--<>--*--<>--*--<>--*--<>--*--<>--*--<>--*--<>--*--
+
+%====<<格式>>============================================================
+% THEOREMS -------------------------------------------------------
+\newtheorem{thm}{定理}[section]
+\newtheorem{cor}[thm]{推论}
+\newtheorem{lem}[thm]{引理}
+\newtheorem{prop}[thm]{命题}
+\theoremstyle{definition}
+\newtheorem{defn}[thm]{定义}
+\newtheorem{conj}{猜想~}
+\newtheorem{exmp}{例~}
+\newtheorem{exer}{习题~}
+%\theoremstyle{remark}
+\newtheorem{rem}[thm]{注}
+\numberwithin{equation}{section}
+\renewcommand{\proofname}{\bf 证明}
+% MATH -----------------------------------------------------------
+%范数, 绝对值, 集合, 内积
+\newcommand{\norm}[1]{\left\Vert#1\right\Vert}  %%范数, 用法$\norm{f}$ 即 ||f||
+\newcommand{\abs}[1]{\left\vert#1\right\vert}   %%绝对值, 用法$\abs{f}$ 即 |f|
+\newcommand{\set}[1]{\left\{#1\right\}}         %%集合, 用法$\set{x:\frac{1}{x}<1}$ 即{x:1/x<1}
+\newcommand{\seq}[1]{\left<#1\right>}
+\newcommand{\sseq}[1]{\left<\left<#1\right>\right>}
+\newcommand{\essnorm}[1]{\norm{#1}_{\text{\rm\normalshape ess}}}
+%-----------------------------------------------------------------
+%各种符号简记：实数R, varepsilon,
+\newcommand{\Real}{\mathbb R}                   %%实数集合, 花写的 R 直接用 $\Real$
+\newcommand{\Complex}{\mathbb C}                %%复数集合
+\newcommand{\Integer}{\mathbb Z}                %%整数集合
+\newcommand{\eps}{\varepsilon}                  %%\eps 代替复杂的 \varepsilon
+\newcommand{\dd}{{\cal{D}}}
+\newcommand{\pp}{\partial}
+\newcommand{\BX}{\mathbf{B}(X)}                 %% 个人可以设置
+\newcommand{\A}{\mathcal{A}}                    %% 看自己的喜好
+\newcommand{\rr}{{\cal R}}
+\newcommand{\minvol}{\textrm{MinVol}}
+\newcommand{\vol}{\textrm{Vol}}
+\newcommand{\simplvol}{\textrm{SimplVol}}
+\newcommand{\const}{\textrm{const}}
+\newcommand{\rt}{\rightarrow}
+\newcommand{\lt}{\leftarrow}
+\newcommand{\xrt}{\xrightarrow}
+\newcommand{\xlt}{\xleftarrow}
+\newcommand{\Int}{\textrm{Int}}
+\newcommand{\Hyperbolic}{\mathbb H}
+\newcommand{\Ric}{\textrm{Ricci}}
+\newcommand{\htop}{\textrm{h}_{\textrm{top}}}
+\newcommand{\h}{{\textrm h}}
+\newcommand{\im}{\textrm{Im}}
+\newcommand{\Ker}{\textrm{Ker}}
+\newcommand{\z}[1]{~#1~}
+\newcommand{\eq}[1]{~$#1$~}  %%使用时如果后面紧跟标点符号, 就将标点符号放在里面, 这样避免标点符号出现在行首.
+\newcommand{\Ad}{\textrm{Ad}}
+\newcommand{\id}{\mathds{1}}
+\newcommand{\C}{{\cal C}}  % 用于联络空间C(P)
+%------------------------------------------------------------------
+%映射, 实部, 虚部
+\newcommand{\To}{\longrightarrow}               %%\To  即产生长的右向箭头---->
+\newcommand{\RE}{\operatorname{Re}}             %% 实部
+\newcommand{\IM}{\operatorname{Im}}             %% 虚部
+%\newcommand{\Poly}{{\cal{P}}(E)}
+%\newcommand{\EssD}{{\cal{D}}}
+% ----------------------------------------------------------------
+\newcommand{\ds}{\displaystyle}                 %% \ds 代替复杂的 \displaystyle
+% ----------------------------------------------------------------
+% Font
+\newcommand{\song}{\CJKfamily{song}}    % 宋体   (Windows自带simsun.ttf)
+\newcommand{\fs}{\CJKfamily{fs}}        % 仿宋体 (Windows自带simfs.ttf)
+\newcommand{\kai}{\CJKfamily{kai}}      % 楷体   (Windows自带simkai.ttf)
+\newcommand{\hei}{\CJKfamily{hei}}      % 黑体   (Windows自带simhei.ttf)
+\newcommand{\li}{\CJKfamily{li}}        % 隶书   (Windows自带simli.ttf)
+%---------------------------------------------------------------------
+% Color
+%\definecolor{mygreen}{rgb}{0,0.5,0}
+%\newcommand{\tc}[1]{\textcolor{mygreen}{#1}\index{#1}}
+
+\newenvironment{mytip}{\texttt{MyTip}\ding{46}\zihao{-5}\kaishu}{\ding{122}}
+
+%%用于中文环境中, 以增加适度的空格
+\newcommand{\Cite}[1]{~\cite{#1}~}
+\newcommand{\kh}[1]{~({#1})~}%%括号
+
+%====================================================================
+% 希望有更多更好看的装饰条
+%  带说明
+%====<<>>============================================================
+% 不带说明
+%--*--<>--*--<>--*--<>--*--<>--*--<>--*--<>--*--<>--*--<>--*--<>--*--

@@ -1,0 +1,97 @@
+% !TEX encoding = UTF-8
+%%====<<宏包>>============================================================
+% 已包含的宏包 |
+%--------------|
+%%中文TeX宏包
+%%{ctex}
+%% math packages
+%%{amsmath,amsthm,amsfonts,amssymb,bm,xypic,dsfont,pifont}
+%% graphics packages
+%%{graphicx,psfrag}
+%% color package
+%%{color}
+%% makeidx
+%%{makeidx}
+%使用宏包tocbibind可以将参考文献或索引等放置到目录中去，需要stdclsdv宏包
+%%{stdclsdv,tocbibind}
+%% 一些特殊符号
+%%{bbding}
+%% check pdfTeX mode
+%%{ifpdf}
+%%交叉索引
+%%{hyperref}
+%--------------------------|
+% 加入你需要用到的其他宏包 |
+%--------------------------|
+%\usepackage{你需要用到的宏包名称}
+\usepackage{mathptmx}
+%------------------------------------|
+% 下面是一种数学字体, 详见symbols.pdf|
+%------------------------------------|
+\DeclareMathAlphabet{\mathpzc}{OT1}{pzc}{m}{it}
+%用法: \eq{\mathpzc{f(x)}}
+%--*--<>--*--<>--*--<>--*--<>--*--<>--*--<>--*--<>--*--<>--*--<>--*--
+
+%====<<格式>>============================================================
+% THEOREMS -------------------------------------------------------
+\newtheorem{thm}{Theorem}[chapter]
+\newtheorem{cor}[thm]{Corollary}
+\newtheorem{lem}[thm]{Lemma}
+\newtheorem{prop}[thm]{Proposition}
+\theoremstyle{definition}
+\newtheorem{defn}[thm]{Definition}
+\theoremstyle{remark}
+\newtheorem{rem}[thm]{Remark}
+\numberwithin{equation}{section}
+% MATH -----------------------------------------------------------
+%范数，绝对值，集合，内积
+\newcommand{\norm}[1]{\left\Vert#1\right\Vert}  %%范数，用法$\norm{f}$ 即 ||f||
+\newcommand{\abs}[1]{\left\vert#1\right\vert}   %%绝对值，用法$\abs{f}$ 即 |f|
+\newcommand{\set}[1]{\left\{#1\right\}}         %%集合，用法$\set{x:\frac{1}{x}<1}$ 即{x:1/x<1}
+\newcommand{\seq}[1]{\left<#1\right>}
+\newcommand{\sseq}[1]{\left<\left<#1\right>\right>}
+\newcommand{\essnorm}[1]{\norm{#1}_{\text{\rm\normalshape ess}}}
+%-----------------------------------------------------------------
+%各种符号简记：实数R，varepsilon，
+\newcommand{\Real}{\mathbb R}                   %%实数集合，花写的 R 直接用 $\Real$
+\newcommand{\Complex}{\mathbb C}                %%复数集合
+\newcommand{\Integer}{\mathbb Z}                %%整数集合
+\newcommand{\eps}{\varepsilon}                  %%\eps 代替复杂的 \varepsilon
+\newcommand{\dd}{{\cal{D}}}
+\newcommand{\pp}{\partial}
+%------------------------------------------------------------------
+%映射，实部，虚部
+\newcommand{\To}{\longrightarrow}               %%\To  即产生长的右向箭头---->
+\newcommand{\RE}{\operatorname{Re}}             %% 实部
+\newcommand{\IM}{\operatorname{Im}}             %% 虚部
+%\newcommand{\Poly}{{\cal{P}}(E)}
+%\newcommand{\EssD}{{\cal{D}}}
+% ----------------------------------------------------------------
+\newcommand{\ds}{\displaystyle}                 %% \ds 代替复杂的 \displaystyle
+% ----------------------------------------------------------------
+%个人自定义设置
+\newcommand{\const}{\textrm{const}}
+\newcommand{\rt}{\rightarrow}
+\newcommand{\lt}{\leftarrow}
+\newcommand{\xrt}{\xrightarrow}
+\newcommand{\xlt}{\xleftarrow}
+\newcommand{\Int}{\textrm{Int}}
+\newcommand{\h}{{\textrm h}}
+\newcommand{\im}{\textrm{Im}}
+\newcommand{\Ker}{\textrm{Ker}}
+\newcommand{\Ad}{\textrm{Ad}}
+\newcommand{\id}{\mathds{1}}
+%下面两个命令用于中文环境中
+\newcommand{\z}[1]{~#1~}
+\newcommand{\eq}[1]{~$#1$~}  %%使用时如果后面紧跟标点符号, 就将标点符号放在里面, 这样避免标点符号出现在行首.
+%---------------------------------------------------------------------
+% Color
+% 已定义下面的\tc命令, 用于将关键字加色并添加到索引中.
+%\definecolor{mygreen}{rgb}{0,0.5,0}
+%\newcommand{\tc}[1]{\textcolor{mygreen}{#1}\index{#1}}
+%====================================================================
+% 希望有更多更好看的装饰条
+%  带说明
+%====<<>>============================================================
+% 不带说明
+%--*--<>--*--<>--*--<>--*--<>--*--<>--*--<>--*--<>--*--<>--*--<>--*--

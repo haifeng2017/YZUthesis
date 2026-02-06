@@ -1,0 +1,141 @@
+% !TEX encoding = UTF-8
+\section{数学}
+
+\subsection{定理等环境}
+
+模板已经预设了 \verb|theorem|、\verb|lemma| 等定理环境, 详见 \verb|YZUthesis.dtx| 或由此生成的 \verb|YZUthesis.cls| 文件. 内容如下:
+
+\begin{verbatim}
+\newtheorem{theorem}{定理}[chapter]
+\newtheorem{lemma}[theorem]{引理}
+\newtheorem{corollary}[theorem]{推论}
+\newtheorem{proposition}[theorem]{命题}
+\newtheorem{definition}[theorem]{定义}
+\newtheorem{example}[theorem]{例}
+\newtheorem{remark}[theorem]{注}
+\newtheorem{assumption}[theorem]{假设}
+\newtheorem{axiom}[theorem]{公理}
+\end{verbatim}
+
+在 \verb|setup/cformat.tex| 文件中, 可以自己设定定理环境. 如:
+\begin{verbatim}
+\newtheorem{thm}{定理}[section]
+\newtheorem{cor}[thm]{推论}
+\newtheorem{lem}[thm]{引理}
+\newtheorem{prop}[thm]{命题}
+\theoremstyle{definition}
+\newtheorem{defn}[thm]{定义}
+\newtheorem{conj}{猜想~}
+\newtheorem{exmp}{例~}
+\newtheorem{exer}{习题~}
+%\theoremstyle{remark}
+\newtheorem{rem}[thm]{注}
+\numberwithin{equation}{section}
+\renewcommand{\proofname}{\bf 证明}
+\end{verbatim}
+
+这两种都可以使用.
+
+
+\subsection{样例}
+
+\begin{theorem}[Bernstein]
+设 $f$ 在 $[a,b]$ 上任意阶可导, 且各阶导数非负. 则当 $x,x_0\in(a,b)$, 且 $|x-x_0| < b-x_0$ 时,
+\[
+f(x)=\sum_{n=0}^{\infty}\frac{f^{(n)(x_0)}}{n!}(x-x_0)^n\ .
+\]
+\end{theorem}
+\begin{proof}
+见\href{http://www.atzjg.net/admin/do/view_answers.php?qid=3515}{问题3515}.
+\end{proof}
+
+
+\begin{thm}[Dini] 设 $\{g_n(x)\}_{n=1}^{\infty}$ 是定义在 $[a,b]$ 上的非负连续函数列, 若对每个 $x\in[a,b]$, $\{g_n(x)\}$ 单调递减趋于 $0$, 则 $g_n\rightrightarrows 0$.
+\end{thm}
+\begin{proof}
+[分析] 要证明 $\{g_n\}$ 一致收敛到 $0$, 即任给 $\varepsilon > 0$, 要找到仅依赖于 $\varepsilon$ 的正整数 $N$, 使得当 $n > N$ 时, 有 $|g_n(x)-0| < \varepsilon$.
+
+由于 $g_n$ 非负, 故上面的不等式等价于 $g_n(x) < \varepsilon$.
+
+对于这个不等式, 所给的条件无法用于放缩进而证明小于任给的 $\varepsilon$. 条件点点收敛 $g_n(x)\rightarrow 0$ ($n\rightarrow\infty$) 得到的 $N$ 是依赖于 $\varepsilon$ 和 $x$ 的. 因此转而考虑其他方法, 比如反证法.
+
+$\{g_n\}$ 不一致收敛到 $0$ 等价于存在 $\varepsilon >0$, 对任意的 $N$, 存在 $n > N$, 使得 $g_n(x)\geqslant\varepsilon$ 对某个 $x\in[a,b]$ 成立.
+
+为此, 考虑集合
+
+\[
+A_n=\{x\in[a,b]\mid g_n(x)\geqslant\varepsilon\}.
+\]
+
+我们只需要证明从某个 $N$ 往后的集合 $A_n$ 都是空集.
+
+由于 $\{g_n(x)\}$ 关于 $n$ 是单调递减的, 故 $g_{n+1}(x)\leqslant g_n(x)$. 因此, 若 $x\in A_{n+1}$, 则 $x\in A_n$. 于是我们有
+
+\[
+A_1\supset A_2\supset\cdots\supset A_n\supset A_{n+1}\supset\cdots\ .\tag{*}
+\]
+
+我们只要证明存在某个 $A_n=\emptyset$. 此时又使用反证法. 加上对于任意的 $n\geqslant 1$, $A_n\neq\emptyset$.
+
+即存在 $x_n\in A_n$, $n=1,2,\ldots$.  由于 $x_n\in[a,b]$, 故存在收敛子列 $x_{n_k}$, 其极限(记为 $x_0$)仍属于 $[a,b]$. 注意到 $n_k\geqslant k$. 故
+
+\[A_k\supset A_{n_k}\supset\{x_{n_k}, x_{n_{k+1}},\ldots\}.\]
+
+又 $g_n(x)$ 在 $[a,b]$ 上连续, 故对于收敛到 $x_0$ 的点列 $\{x_{n_k}\}$, 有
+
+\[
+\lim_{k\rightarrow\infty}g_n(x_{n_k})=g_n(x_0).
+\]
+
+而 $g_n(x_{n_k})\geqslant\varepsilon$, 故由极限的保号性知道 $g_n(x_0)\geqslant\varepsilon$. 这与条件 $g_n(x)$ 对每个 $x$ 关于 $n$ 递减趋于 $0$ 矛盾. 因此 $(*)$ 中存在某个 $A_{N}$ 是空集. 从而得证.
+\end{proof}
+
+
+Dini 定理可以用于函数项级数一致收敛的判断.
+
+\begin{corollary}
+设 $\sum\limits_{n=1}^{\infty}f_n(x)$ 在 $[a,b]$ 上收敛到 $f(x)$, 且 $f_n(x)$ 非负连续, 则 $\sum\limits_{n=1}^{\infty}f_n(x)$ 在 $[a,b]$ 上一致收敛到 $f(x)$.
+\end{corollary}
+
+
+以上定理参见 \cite{Mei2013B}.
+
+
+\subsection{行内公式}
+
+\begin{verbatim}
+    由于中英文之间需要适当的间距(一般使用~来调节), 如果使用 $ $, 则需要敲入 ~$ $~ . 因此建议改用 \eq{ }. `\eq{}' 的定义为:
+    \newcommand{\eq}[1]{~$#1$~}
+    详见 cformat.tex, 其中还定义了其他常用的命令.
+
+试比较
+    公式$f(x)$与前后中文之间无适当的间距, 但\eq{f(x)}看起来更舒服.
+效果如下:
+\end{verbatim}
+
+  公式$f(x)$与前后中文之间无适当的间距, 但\eq{f(x)}看起来更舒服.
+
+注意早就有更好的办法解决这个问题, 请网上搜索这个问题. 例如 XeTeX
+0.997中文间距调整宏包\z{zhspacing}.
+
+\begin{verbatim}
+使用 \eq{} 有个缺点, 就是若正好标点符号出现在公式后面, 如
+\eq{\sqrt{1+x}}. 则句点 `.' 可能会出现在行首. 因此,
+我建议在这种情况下输入\eq{\sqrt{1+x}.}
+\end{verbatim}
+
+标点符号有可能出现在行首,
+如\eq{\sqrt{1+x}}.\eq{x},\eq{f(x)=\sin(x)\cos(x)}.\eq{\sqrt{1+x}}.\eq{x},\eq{f(x)=\sin(x)\cos(x)}.
+\eq{\sqrt{1+x}}.\eq{x},\eq{f(x)=\sin(x)\cos(x)}.\eq{\sqrt{1+x}}.\eq{x},\eq{f(x)=\sin(x)\cos(x)}.
+
+
+\eq{\mathpzc{f(x)}}
+\[
+\mathpzc{ABCDEFGHIJKLMNOPQRSTUVWXYZ}
+\]
+\[
+\mathpzc{abcdefghijklmnopqrstuvwxyz}
+\]
+\[
+\mathpzc{1234567890}
+\]

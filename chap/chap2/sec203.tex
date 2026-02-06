@@ -1,0 +1,43 @@
+% !TEX encoding = UTF-8
+\section{split.exe}
+
+程序名称: split.exe
+
+(配合扬州大学博硕士论文模板\z{yzuthesis}使用)
+
+作者: H. Xu
+
+完成时间: 2008-07-06
+
+用途: 本程序是专门为论文上传而制作的, 可以一次性生成所需要的
+      封面.pdf, 摘要.pdf, 目录.pdf, 正文.pdf
+
+使用说明: 将\z{split.exe}拷贝到与\z{thesis.tex}所在目录下 (即位于
+\z{yzuthesis}目录中), 然后双击运行.
+
+但是有几项需要注意.
+
+注意事项: 1. 所生成的\z{pdf}文件放在\z{upload}目录中,
+             \z{upload}目录与\z{yzuthesis}目录同级.
+             所生成的\z{pdf}文件中的中文可以复制拷贝, 因为本程序
+             中使用的是\z{dvipdfmx}命令.
+
+          2. 由于目前还没有设计专门的\z{bibtex}格式文件, 因此
+             \z{thesis.bbl}是手工输入的. 为安全起见, 请将您自己
+             写的\z{thesis.bbl}文件另存为\z{thesis-bbl.bblbak}, 注意
+             本程序只认\z{thesis-bbl.bblbak}这个文件名 (这是我自
+             定的, 有点罗嗦, 不好意思), 使用其它
+             文件名将导致程序找不到该文件而无法完成任务.
+
+          3. 摘要中如果有引用, 如
+\begin{center}
+\begin{verbatim}
+\cite{Gromov1982}
+\end{verbatim}
+\end{center}
+             请手工改成\z{``[Gromov1982]''}等等. 否则会出现问号 ? .
+
+          4. 本程序自动清除所产生的临时文件, 并且不会改动原来
+             的\z{.tex}文件.
+
+          5. 本程序运行时间可能比较长, 一般需要2分钟左右.

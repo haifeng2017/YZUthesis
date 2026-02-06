@@ -1,0 +1,98 @@
+% !TEX encoding = UTF-8
+\chapter{使用说明}
+
+模板中所有文件均采用 \verb|UTF8| 编码存储, 方便跨平台编译. 如果使用的是 WinEdt, 则将\z{thesis.tex}或\z{ThesisForCheck.tex}设置为主文件(即打开(或用鼠标选中已打开的)\z{thesis.tex}文件或\z{ThesisForCheck.tex}文件, 点击菜单栏中的\z{Project\eq{\rt}Set Main File}将其设置为主文件). 然后点击编译按钮(比如 PDFLaTeX等)编译得到 pdf 文件. 注意\z{thesis.tex}和\z{ThesisForCheck.tex}共用其他所有文件. 一般需要编译多次, 如果有参考文献和索引, 还需运行 \verb|bibtex| 和 \verb|makeindex|. 下面以 \verb|latex| 编译为例, 依次执行下面的命令.
+
+\begin{enumerate}
+
+\item
+快捷键\z{Ctrl+Shift+L}或命令行
+\begin{verbatim}
+latex thesis
+\end{verbatim}
+
+\item
+
+快捷键\z{Ctrl+Shift+B}或命令行
+\begin{verbatim}
+bibtex thesis
+\end{verbatim}
+
+\item
+快捷键\z{Ctrl+Shift+I}或命令行
+\begin{verbatim}
+makeindex thesis
+\end{verbatim}
+
+
+\item
+两次快捷键\z{Ctrl+Shift+L}或命令行
+\begin{verbatim}
+latex thesis
+\end{verbatim}
+
+\item 
+使用 \verb|dvipdfmx| 工具将 \verb|.dvi| 文件转换为 \verb|.pdf| 文件.
+
+\begin{verbatim}
+dvipdfmx thesis.dvi
+\end{verbatim}
+\end{enumerate}
+
+
+为方便编译, 这里提供了 Windows 下的Powershell 脚本 \verb|build.ps1|, 可右键并点击“使用 Powershell 运行”或在控制台下运行. 也可以在控制台下运行.
+
+在控制台运行 \verb|build.ps1| 会出现下面的提示:
+\begin{verbatim}
+安全警告
+请只运行你信任的脚本。虽然来自 Internet 的脚本会有一定的用处，但此脚本可能会损坏你的计算机。如果你信任此脚本，请使用 Unblock-File
+cmdlet 允许运行该脚本，而不显示此警告消息。是否要运行 D:\YZUthesis\build.ps1?
+[D] 不运行(D)  [R] 运行一次(R)  [S] 暂停(S)  [?] 帮助 (默认值为“D”):
+\end{verbatim}
+
+此时输入 \verb|R| 或 \verb|r| 按回车即可. 此时默认使用 \verb|xelatex| 引擎先后编译 \verb|thesis.tex| 和 \verb|ThesisForCheck.tex|, 最后得到 \verb|thesis.pdf| 和 \verb|ThesisForCheck.pdf| 两个文件.
+
+\verb|build.ps1| 也可以后面跟参数, 指定编译引擎以及要执行的动作. 如果跟 \verb|-Help| 或 \verb|-help| 或 \verb|-h| 则列出 \verb|build.ps1| 的帮助信息. 如下:
+
+
+\begin{verbatim}
+===========================================
+YZUthesis 模板编译系统 (PowerShell 版本)
+===========================================
+
+用法: .\build.ps1 [-Action <命令>] [-Engine <引擎>] [-Help | -help | -h]
+
+可用命令 (Action):
+
+  all             - 编译所有内容
+  cls             - 只生成 .cls 和 .cfg 文件
+  doc             - 只生成模板文档
+  thesis          - 编译所有主文档 (默认)
+  check           - 只编译检查文档
+  clean           - 清理临时文件
+  distclean       - 完全清理
+
+可用引擎 (Engine):
+
+  pdflatex        - 使用 pdfLaTeX 编译
+  xelatex         - 使用 XeLaTeX 编译 (默认)
+  lualatex        - 使用 LuaLaTeX 编译
+  latex           - 使用传统 LaTeX 编译，生成 DVI 再转 PDF
+
+示例:
+
+  .\build.ps1                            # 默认编译所有 (xelatex)
+  .\build.ps1 -Engine pdflatex           # 使用 pdfLaTeX 编译所有
+  .\build.ps1 -Action thesis -Engine lualatex
+  .\build.ps1 -Action clean              # 清理临时文件
+  .\build.ps1 -Help                      # 显示帮助信息
+
+当前配置:
+  默认引擎: xelatex
+  主文档: thesis.tex, ThesisForCheck.tex
+\end{verbatim}
+
+\medskip
+
+
+
