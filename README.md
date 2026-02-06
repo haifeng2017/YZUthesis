@@ -51,11 +51,11 @@ Unblock-File .\build.ps1
 🔧 可用操作命令 (Action)
 |命令|功能说明|
 |------|------|
-|all|编译所有内容（默认选项）|
+|all|编译所有内容, 包括生成 YZUthesis.cls, YZUthesis.cfg, YZUthesis.pdf|
 |cls|仅生成 .cls 和 .cfg 样式文件|
 |doc|仅生成模板文档|
-|thesis|编译所有主论文文档|
-|check|仅编译抽检文档|
+|thesis|编译所有主论文文档 thesis.pdf, ThesisForCheck.pdf.（默认选项）|
+|check|仅编译抽检文档 ThesisForCheck.pdf|
 |clean|清理临时文件（*.aux, *.log 等）|
 |distclean|完全清理（包括生成的PDF）|
 
