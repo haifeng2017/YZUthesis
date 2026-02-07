@@ -22,7 +22,7 @@
 %% 最后更新：2026年1月
 %%
 %% 许可证：
-%% LaTeX Project Public License, version 1.3c 或更高版本
+%% MIT License
 %%
 %% Author: H. Xu
 %% Date: March 2007
@@ -1230,7 +1230,7 @@
 
 \vskip\stretch{1}
 \begin{center}
-{\footnotesize(本页为学位论文末页. 如论文为密件可不授权, 但论文原创必须声明.)}
+{\footnotesize(如论文为密件可不授权, 但论文原创必须声明.)}
 \end{center}
 
     \end{quotation}

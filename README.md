@@ -1,5 +1,6 @@
 # YZUthesis
 A thesis template for Yangzhou University.
+<<<<<<< HEAD
 
 
 thesis.tex  学位论文主文件
@@ -59,3 +60,5 @@ build.ps1 后面可以加参数, 使用方法如下:
 H. Xu
 
 2026-02-6
+=======
+>>>>>>> 328a11e3a1159a017f9d2b239215ae1ead8f28ca
